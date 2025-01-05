@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Race Car</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        text-align: center;
+      }
+
+      .menu-container {
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+        width: 300px;
+        z-index: 1;
+      }
+
+      #video-background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1; /* Letakkan di belakang semua konten */
+      }
+
+      h1 {
+        color: #333;
+      }
+
+      .button {
+        background-color: #4caf50;
+        color: white;
+        font-size: 18px;
+        padding: 15px 32px;
+        margin: 10px 0;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      .button:hover {
+        background-color: #45a049;
+      }
+
+      .tips {
+        text-align: left;
+        background-color: #f9f9f9;
+        padding: 20px;
+        border-radius: 5px;
+        display: none;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-top: 20px;
+        position: relative;
+      }
+
+      .tips ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      .tips li {
+        font-size: 16px;
+        margin: 5px 0;
+      }
+
+      .hide-button {
+        background-color: transparent;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        padding: 8px 12px;
+        font-size: 14px;
+        color: white;
+        border: none; /* Menghilangkan border */
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .hide-button:hover {
+        background-color: transparent;
+      }
+    </style>
+  </head>
+  <body>
+    <video id="video-background" autoplay muted loop>
+      <source src="bg.mp4" type="video/mp4" />
+    </video>
+
+    <div class="menu-container">
+      <h1>Race Car</h1>
+      <button class="button" onclick="startGame()">Start Game</button>
+      <button class="button" onclick="showTips()">Tips Bermain Game</button>
+
+      <div class="tips" id="tips-container">
+        <h3>Tips Bermain Game:</h3>
+        <ul>
+          <li>1. Gunakan Tombol ⬅️⬆️⬇️➡️ untuk Control.</li>
+          <li>2. Hindari tabrakan dengan Mobil lain di jalan.</li>
+          <li>3. Score semakin tinggi Speed bertambah.</li>
+        </ul>
+        <button class="hide-button" onclick="hideTips()">⬅️</button>
+      </div>
+    </div>
+
+    <script>
+      function startGame() {
+        // Mengarahkan pengguna ke halaman game (misalnya game.html)
+        window.location.href = "menu.html"; // Ganti dengan nama file game Anda
+
+        alert(
+          "Game dimulai! Selamat bermain! (Fitur game dapat dikembangkan lebih lanjut)."
+        );
+      }
+
+      function showTips() {
+        var tipsContainer = document.getElementById("tips-container");
+        tipsContainer.style.display = "block";
+      }
+
+      function hideTips() {
+        var tipsContainer = document.getElementById("tips-container");
+        tipsContainer.style.display = "none";
+      }
+    </script>
+  </body>
+</html>
